@@ -1,0 +1,21 @@
+{
+  "header": {
+    "title": "About US",
+    "body": "BuildUp is young company invent on 2021 by group entusiasts with goal to grow worldwide offering full digital solution services in one place."
+  },
+
+  "content": {
+    "image": "./Images/About/about.svg",
+    "image_dark": "./Images/About/about-dark.svg",
+
+    "title": "Reasons for choosing",
+
+    "paragraph_1": "This days is very difficult to finde good solutions for online buisnesses and new companys on one place especally because nither one solutions can fit into multiple once. Researchin this problem, group of experts  decided to offer full solution that will save time and money to companys and buissness owners",
+
+    "paragraph_1_more": "",
+
+    "paragraph_2": "To fix this problem for our clieants is primary goal for us and we will offer full service and greate satisfaction for all of our clients that can save time and investmentes no metter on project complexity.",
+
+    "paragraph_2_more": "For better overroll experience we made market analysis and decided to make partnership with experts in a field for all our Web solutions that we can offer now. Result now is fast growing company ready to expend network on varius fields and different continents. Now we can offer Full stack solutins and beautiful Web design to our clients with fully integrity and security on minde."
+  }
+}

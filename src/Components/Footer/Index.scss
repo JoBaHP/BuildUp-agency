@@ -1,0 +1,11 @@
+@import "./../../Sass/variables.scss";
+
+.main-footer {
+  background-color: #1c1d30;
+  padding-top: 150px;
+  padding-bottom: 50px;
+
+  @media (max-width: $maxXSmallScreens) {
+    padding-top: 100px;
+  }
+}

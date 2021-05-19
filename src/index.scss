@@ -1,0 +1,73 @@
+@import "./Sass/variables.scss";
+
+:root {
+  --main-color: #eda4e7;
+  --second-color: #8deee4;
+  --third-color: #262222;
+  --fourth-color: #495254;
+  --white-color: #fff;
+
+  --background-color: #fff;
+  --upper-background-color: #fff;
+
+  --box-shadow-third-color: rgba(38, 34, 34, 0.1);
+  --box-shadow-main-color: rgba(71, 174, 225, 0.2);
+  --box-shadow-white-color: rgba(255, 255, 255, 0.3);
+}
+// End Main Colors Using Css Variables In Light Theme
+// Start Main Colors Using Css Variables In Dark Theme
+
+.dark-theme {
+  --main-color: #eda4e7;
+  --second-color: #8deee4;
+  --third-color: #fff;
+  --fourth-color: #fff;
+  --white-color: #262222;
+
+  --background-color: #121212;
+  --upper-background-color: #232323;
+
+  --box-shadow-third-color: rgba(255, 255, 255, 0.1);
+  --box-shadow-main-color: rgba(59, 146, 189, 0.2);
+  --box-shadow-white-color: rgba(0, 0, 0, 0.3);
+}
+
+// End Main Colors Using Css Variables In Dark Theme
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: $backgroundColor;
+}
+
+.container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: $minXXLargeScreens) {
+    width: 1370px;
+  }
+
+  @media (max-width: $maxXLargeScreens) {
+    width: 1170px;
+  }
+
+  @media (max-width: $maxLargeScreens) {
+    width: 100%;
+  }
+}
