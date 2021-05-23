@@ -14,16 +14,34 @@
       "caption": "Weather And News App"
     },
     {
-      "id": 2,
-      "image": "./Images/Portfolio/img-2.svg",
-      "type": "App",
-      "caption": "Weather And News App"
+      "id": 19,
+      "image": "./Images/Portfolio/shopping-app.png",
+      "type": "Website",
+      "caption": "JoYel's E-Commerce "
     },
     {
       "id": 3,
       "image": "./Images/Portfolio/img-3.svg",
       "type": "Branding",
-      "caption": "Weather And News App"
+      "caption": "Social Media Branding"
+    },
+    {
+      "id": 9,
+      "image": "./Images/Portfolio/img-9.svg",
+      "type": "Website",
+      "caption": "Website Livorno pizzeria"
+    },
+    {
+      "id": 2,
+      "image": "./Images/Portfolio/food-app.png",
+      "type": "App",
+      "caption": "Livorno Ordering App"
+    },
+    {
+      "id": 7,
+      "image": "./Images/Portfolio/seo.png",
+      "type": "Website",
+      "caption": "SEO"
     },
     {
       "id": 4,
@@ -31,6 +49,7 @@
       "type": "Branding",
       "caption": "Coco Oil"
     },
+
     {
       "id": 5,
       "image": "./Images/Portfolio/img-5.svg",
@@ -43,24 +62,14 @@
       "type": "App",
       "caption": "Media Inc."
     },
-    {
-      "id": 7,
-      "image": "./Images/Portfolio/img-7.svg",
-      "type": "App",
-      "caption": "Crypto App"
-    },
+
     {
       "id": 8,
       "image": "./Images/Portfolio/img-8.svg",
       "type": "Social Media",
       "caption": "Aspire"
     },
-    {
-      "id": 9,
-      "image": "./Images/Portfolio/img-9.svg",
-      "type": "Website",
-      "caption": "Some Company"
-    },
+
     {
       "id": 10,
       "image": "./Images/Portfolio/img-1.svg",
@@ -108,12 +117,6 @@
       "image": "./Images/Portfolio/img-8.svg",
       "type": "Social Media",
       "caption": "Aspire"
-    },
-    {
-      "id": 18,
-      "image": "./Images/Portfolio/img-9.svg",
-      "type": "Website",
-      "caption": "Some Company"
     }
   ]
 }

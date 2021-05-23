@@ -2,13 +2,14 @@
 @import "./../../../Sass/mixins.scss";
 
 .logo {
-	@include logo;
+  @include logo;
+  width: 50%;
 
-	.logo-image {
-		@include logo-image;
-	}
+  .logo-image {
+    @include logo-image;
+  }
 
-	.logo-text {
-		@include logo-text;
-	}
+  .logo-text {
+    @include logo-text;
+  }
 }

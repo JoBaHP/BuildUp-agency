@@ -1,65 +1,72 @@
 import { useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
+
+// Import Custome Hooks
+import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
 
 // Main Portfolio Projects Sass File
 import "./Projects.scss";
 
 // Portfolio Projects Component
 const PortfolioProjects = ({ projects, type, projectsContainer }) => {
-	// Default Number Of Projects
-	const defaultNumber = 9;
+  // Custome Hooks
+  const { throttle } = useThrottle();
+  const isPathMatch = useRouteMatch().path === "/portfolio";
 
-	// Number Of Projects State
-	const [numberOfProjects, setNumberOfProjects] = useState(defaultNumber);
+  // Default Number Of Projects
+  const defaultNumber = 9;
 
-	const viewAllProjects = () => {
-		if (numberOfProjects !== projects.length) {
-			setNumberOfProjects(projects.length);
-		} else {
-			setNumberOfProjects(defaultNumber);
-		}
-	};
+  // Number Of Projects State
+  const [numberOfProjects, setNumberOfProjects] = useState(defaultNumber);
 
-	// Get Projects List
-	const projectsList = projects.map((project, index) => {
-		return index < numberOfProjects ? (
-			<div
-				key={project.id}
-				className={`${
-					project.type === type || type === "All Work"
-						? "project"
-						: "project hidden"
-				}`}
-			>
-				<Link
-					to="/portfolio"
-					className="project-link"
-					aria-label="Project Link"
-				></Link>
+  const viewAllProjects = throttle(() => {
+    if (numberOfProjects !== projects.length) {
+      setNumberOfProjects(projects.length);
+    } else {
+      setNumberOfProjects(defaultNumber);
+    }
+  }, 1000);
 
-				<figure>
-					<div className="project-image">
-						<img src={project.image} alt={project.caption} />
-						<span className="type">{project.type}</span>
-					</div>
-					<figcaption>{project.caption}</figcaption>
-				</figure>
-			</div>
-		) : null;
-	});
+  // Get Projects List
+  const projectsList = projects.map((project, index) => {
+    return index < numberOfProjects ? (
+      <div
+        key={project.id}
+        className={`${
+          project.type === type || type === "All Work"
+            ? "project"
+            : "project hidden"
+        }`}
+      >
+        <Link
+          to="/portfolio"
+          className="project-link"
+          aria-label="Project Link"
+        ></Link>
 
-	return (
-		<Fragment>
-			<div className="projects" ref={projectsContainer}>
-				{projectsList}
-			</div>
-			<div className="portfolio-link">
-				<Link to="/portfolio" onClick={viewAllProjects}>
-					{numberOfProjects >= projects.length ? "View Less" : "View All"}
-				</Link>
-			</div>
-		</Fragment>
-	);
+        <figure>
+          <div className="project-image">
+            <img src={project.image} alt={project.caption} />
+            <span className="type">{project.type}</span>
+          </div>
+          <figcaption>{project.caption}</figcaption>
+        </figure>
+      </div>
+    ) : null;
+  });
+
+  return (
+    <Fragment>
+      <div className="projects" ref={projectsContainer}>
+        {projectsList}
+      </div>
+      <div className="portfolio-link">
+        <Link to="/portfolio" onClick={isPathMatch ? viewAllProjects : null}>
+          {numberOfProjects >= projects.length ? "View Less" : "View All"}
+        </Link>
+      </div>
+    </Fragment>
+  );
 };
 
 export default PortfolioProjects;
