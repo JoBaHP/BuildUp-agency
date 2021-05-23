@@ -10,28 +10,28 @@
       "title": "App Development",
       "image": "./Images/Services/img-1.svg",
       "image_dark": "./Images/Services/img-1-dark.svg",
-      "body": "We design and build full website solutions for your growing buissnes build with latest modern MERN or MEAN technology "
+      "body": "Designing and building App solutions for your growing business build on latest modern MERN or MEAN technologies"
     },
     {
       "id": 2,
-      "title": "Wordpress Design",
+      "title": "Website Design",
       "image": "./Images/Services/img-2.svg",
       "image_dark": "./Images/Services/img-2-dark.svg",
-      "body": "If you need custom solution to make your presentation online unique and easy to maintain"
+      "body": "If you need a custom solution to make your presentation online unique and easy to maintain"
     },
     {
       "id": 3,
       "title": "Social Media",
       "image": "./Images/Services/img-3.svg",
       "image_dark": "./Images/Services/img-3-dark.svg",
-      "body": "Presentintg your brand on social media. We will  make that process easy for you"
+      "body": "Presenting your brand on social media. We will  make that process easy for you"
     },
     {
       "id": 4,
       "title": "Logo & Branding",
       "image": "./Images/Services/img-4.svg",
       "image_dark": "./Images/Services/img-4-dark.svg",
-      "body": "Designing and Branding companyn indentities that make your clients convey"
+      "body": "Designing and branding a company indentity that makes your clients convey"
     }
   ]
 }
