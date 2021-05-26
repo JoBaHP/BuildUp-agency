@@ -8,20 +8,16 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-55%, -50%) scale(0.69);
+    transform: translate(-52%, -50%) scale(0.66);
     user-select: none;
     z-index: 1;
 
     @media (max-width: $maxMediumScreens) {
-      transform: translate(-50%, -50%) scale(0.57);
+      transform: translate(-53%, -50%) scale(0.5);
     }
 
     @media (max-width: $maxSmallScreens) {
-      transform: translate(-50%, -50%) scale(0.86);
-    }
-
-    @media (max-width: $maxXSmallScreens) {
-      transform: translate(-50%, -50%) scale(0.6);
+      transform: translate(-50%, -50%) scale(0.62);
     }
   }
 
@@ -45,9 +41,9 @@
 
     label {
       display: block;
-      color: #ffffff;
+      color: $thirdColor;
       font-size: 1.5rem;
-      margin-left: 5rem;
+      margin-left: 15px;
       margin-bottom: 10px;
     }
 
@@ -57,17 +53,27 @@
       background-color: $upperBackgroundColor;
       border-radius: 16px;
       box-shadow: 6px 6px 9px #0000000d;
-      margin-bottom: 15px;
       display: block;
       font-size: 1.2rem;
+      color: $thirdColor;
 
       &:not([type="submit"]) {
         width: 100%;
         padding: 15px 20px;
+        margin-bottom: 15px;
       }
 
       &::placeholder {
         color: $thirdColor;
+        opacity: 0.7;
+        font-size: 1rem;
+        transition: all 0.2s linear;
+      }
+
+      &:focus {
+        &::placeholder {
+          opacity: 0;
+        }
       }
     }
 
@@ -84,5 +90,54 @@
       height: 200px;
       resize: none;
     }
+
+    & > div {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #fff;
+
+      .status {
+        .loading {
+          display: block;
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          position: relative;
+
+          &:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            display: block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border-width: 4px;
+            border-style: solid;
+            border-color: #fff transparent #fff transparent;
+            animation: loading 1.2s linear infinite;
+          }
+        }
+
+        p {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

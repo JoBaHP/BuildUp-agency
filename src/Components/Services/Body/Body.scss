@@ -48,7 +48,7 @@
 
     .card-img {
       width: 100%;
-      height: 320px;
+      height: 250px;
       margin-top: 20px;
       margin-bottom: 30px;
       display: flex;
@@ -56,8 +56,12 @@
       align-items: center;
       user-select: none;
 
-      @media (min-width: $minLargeScreens) and (max-width: $maxLargeScreens) {
-        height: 200px;
+      @media (min-width: $minXXLargeScreens) {
+        height: 290px;
+      }
+
+      @media (max-width: $maxMediumScreens) {
+        height: 350px;
       }
 
       @media (max-width: $maxSmallScreens) {
@@ -71,6 +75,22 @@
 
         @media (max-width: $maxMediumScreens) {
           width: 70%;
+        }
+      }
+    }
+
+    &:nth-of-type(2),
+    &:last-of-type {
+      .card-img {
+        position: relative;
+        left: 10px;
+
+        img {
+          width: 120%;
+
+          @media (max-width: $maxSmallScreens) {
+            width: 100%;
+          }
         }
       }
     }

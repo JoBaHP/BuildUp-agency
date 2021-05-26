@@ -1,29 +1,42 @@
 // Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 
+// Import Component
+import Loading from "./../Loading/Index";
+import Error from "./../Error/Index";
+
 // Main Newsletter Sass File
 import "./Index.scss";
 
 const Newsletter = () => {
-	// Fetch data
-	const {
-		data: { title = "", body = "" },
-	} = useAxios("./Apis/newsletter.json", []);
+  // Fetch data
+  const {
+    data: { title = "", body = "" },
+    success,
+    isPending,
+    error,
+  } = useAxios("./Apis/newsletter.json", []);
 
-	return (
-		<section className="newsletter">
-			<div className="container">
-				<header className="newsletter-header">
-					<h2 className="newsletter-title">{title}</h2>
-					<p className="newsletter-paragraph">{body}</p>
-				</header>
-				<form className="newsletter-form">
-					<input type="text" placeholder="Email" />
-					<input type="submit" value="JOIN" />
-				</form>
-			</div>
-		</section>
-	);
+  return (
+    <section className="newsletter">
+      {isPending && <Loading />}
+
+      {success && (
+        <div className="container">
+          <header className="newsletter-header">
+            <h2 className="newsletter-title">{title}</h2>
+            <p className="newsletter-paragraph">{body}</p>
+          </header>
+          <form className="newsletter-form">
+            <input type="text" placeholder="Email" />
+            <input type="submit" value="JOIN" />
+          </form>
+        </div>
+      )}
+
+      {error && <Error message={error.message} name="Newsletter" />}
+    </section>
+  );
 };
 
 export default Newsletter;

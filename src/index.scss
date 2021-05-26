@@ -52,6 +52,11 @@ body {
   background-color: $backgroundColor;
 }
 
+::selection {
+  background-color: $mainColor;
+  color: #fff;
+}
+
 .container {
   position: relative;
   margin-right: auto;

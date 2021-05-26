@@ -71,8 +71,9 @@
 
     .navbar-link {
       @include reset-link;
-      font-size: 1rem;
-      color: $fourthColor;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: $fourthColor solid;
       transition: color 0.3s linear;
 
       &.active,

@@ -40,7 +40,7 @@ const NavbarList = ({ setNavbarOpen }) => {
 const NavbarBtn = ({ button: { icon, text } }) => {
   return (
     <li className="navbar-item navbar-btn">
-      <NavLink to="/quote" className="navbar-link">
+      <NavLink to="/contact" className="navbar-link">
         <span className="navbar-btn-text">{text}</span>
       </NavLink>
     </li>

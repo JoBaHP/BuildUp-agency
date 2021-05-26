@@ -15,16 +15,15 @@
       "link": "/portfolio",
       "text": "Portfolio"
     },
-
     {
       "id": 5,
-      "link": "/contact",
-      "text": "Contact"
+      "link": "/about",
+      "text": "About"
     }
   ],
 
   "button": {
-    "icon": "fas fa-arrow-right",
-    "text": "Say Hi"
+    "link": "/contact",
+    "text": "Contact"
   }
 }

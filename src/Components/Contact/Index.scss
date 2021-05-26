@@ -1,42 +1,44 @@
 @import "./../../Sass/variables";
 
 .contact {
-	background-color: $backgroundColor;
-	padding-top: 150px;
-	padding-bottom: 150px;
-	overflow: hidden;
+  background-color: $backgroundColor;
+  padding-top: 150px;
+  padding-bottom: 170px;
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
 
-	@media (max-width: $maxMediumScreens) {
-		padding-top: 80px;
-	}
+  @media (max-width: $maxMediumScreens) {
+    padding-top: 80px;
+  }
 
-	@media (min-width: $minSmallScreens) and (max-width: $maxSmallScreens) {
-		padding-bottom: 210px;
-	}
+  @media (min-width: $minSmallScreens) and (max-width: $maxSmallScreens) {
+    padding-bottom: 210px;
+  }
 
-	@media (max-width: $maxXSmallScreens) {
-		padding-top: 0;
-	}
+  @media (max-width: $maxXSmallScreens) {
+    padding-top: 0;
+  }
 
-	.contact-inner {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 50px;
-		justify-content: center;
-		align-items: center;
+  .contact-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
 
-		@media (max-width: $maxSmallScreens) {
-			grid-template-columns: 1fr;
-			gap: 220px;
-		}
+    @media (max-width: $maxSmallScreens) {
+      grid-template-columns: 1fr;
+      gap: 170px;
+    }
 
-		@media (max-width: $maxXSmallScreens) {
-			gap: 100px;
-		}
-	}
+    @media (max-width: $maxXSmallScreens) {
+      gap: 100px;
+    }
+  }
 
-	.contact-info {
-		position: relative;
-		z-index: 2;
-	}
+  .contact-info {
+    position: relative;
+    z-index: 2;
+  }
 }

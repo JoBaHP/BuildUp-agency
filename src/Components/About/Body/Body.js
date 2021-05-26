@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 
-// Import Custome Hooks
 import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
 import useThrottle from "./../../../CustomeHooks/useThrottle/useThrottle";
 
-// Main About Body Sass File
 import "./Body.scss";
 
-// About Body Component
 const AboutBody = (props) => {
   const darkTheme = useDarkTheme();
   const { throttle } = useThrottle();

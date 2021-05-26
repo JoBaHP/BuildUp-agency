@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Import Custome Hooks
 import { useDarkTheme } from "./../../../CustomeHooks/useDarkTheme/useDarkTheme";
@@ -21,36 +21,107 @@ const ContactForm = () => {
   const [name, setName] = useState(nameLS);
   const [email, setEmail] = useState(emailLS);
   const [message, setMessage] = useState(messageLS);
+
   const [isPending, setIsPending] = useState(false);
+  const [sucess, setSucess] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Check Component Mounted
+
+  const [mount, setMount] = useState(true);
+
+  // Axios Cancel Token Source
+  // eslint-disable-next-line
+  const [cancelTokenSource, setCancelTokenSource] = useState(
+    axios.CancelToken.source()
+  );
+
+  /*
+   ** Page Refresh When Using json-server Because Api Is Placed In Public Folder
+   ** This Problem Happend Because React Save The File In Public Folder
+   ** Every File Saved In Public Folder Effect On The Hole Page
+   ** So The Refresh Happen
+   */
+
+  let hideMessage;
+  let throttleHideMessageTimeout = 3000;
 
   const throttleHandleSubmit = throttle(() => {
-    setIsPending(true);
+    // Reset States To Avoid Problems
+    !isPending && setIsPending(true);
+    sucess && setSucess(false);
+    error && setError(null);
+
+    // Clear Timeout When Click Again
+    hideMessage && clearTimeout(hideMessage);
 
     axios
-      .post("", {
-        name,
-        email,
-        message,
-      })
+      .post(
+        "http://localhost:3000/messages",
+        {
+          name,
+          email,
+          message,
+        },
+        {
+          cancelToken: cancelTokenSource.token,
+        }
+      )
       .then(
         (response) => {
-          console.log("New Message Added");
+          if (mount) {
+            // Set States Values
+            setIsPending(false);
+            setSucess(true);
+            error && setError(null);
 
-          // Empty Local Storage After Send Data
-          setNameLS("");
-          setEmailLS("");
-          setMessageLS("");
+            // Clear Timeout When Click Again
+            hideMessage && clearTimeout(hideMessage);
+
+            // Hide Error Message After Timeout
+            hideMessage = setTimeout(() => {
+              setSucess(false);
+            }, 1000);
+
+            // Empty States After Send Data
+            setName("");
+            setEmail("");
+            setMessage("");
+
+            // Empty Local Storage After Send Data
+            setNameLS("");
+            setEmailLS("");
+            setMessageLS("");
+          }
         },
         (error) => {
-          console.log(error);
+          if (mount) {
+            // Set States Values
+            setIsPending(false);
+            sucess && setSucess(false);
+            setError(error.message);
+
+            // Hide Error Message After Timeout
+            hideMessage = setTimeout(() => {
+              setError(null);
+            }, throttleHideMessageTimeout);
+          }
         }
       );
-  }, 2000);
+  }, throttleHideMessageTimeout);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     throttleHandleSubmit();
   };
+
+  useEffect(() => {
+    return () => {
+      // Cancel Request
+      setMount(false);
+      cancelTokenSource.cancel("Cancel Cleanup");
+    };
+  }, [cancelTokenSource]);
 
   return (
     <div className="send-message">
@@ -69,6 +140,7 @@ const ContactForm = () => {
           placeholder="Full Name"
           required
           value={name}
+          disabled={isPending && "disabled"}
           onChange={(e) => {
             setName(e.target.value);
             setNameLS(e.target.value);
@@ -79,6 +151,7 @@ const ContactForm = () => {
           placeholder="Email Address"
           required
           value={email}
+          disabled={isPending && "disabled"}
           onChange={(e) => {
             setEmail(e.target.value);
             setEmailLS(e.target.value);
@@ -88,15 +161,21 @@ const ContactForm = () => {
           placeholder="Message"
           required
           value={message}
+          disabled={isPending && "disabled"}
           onChange={(e) => {
             setMessage(e.target.value);
             setMessageLS(e.target.value);
           }}
         />
-        <input
-          type="submit"
-          value={!isPending ? `Submit` : `Send Message...`}
-        />
+        <div>
+          <input type="submit" value="Submit" />
+
+          <div className="status">
+            {isPending && <div className="loading"></div>}
+            {error && <p className="error">{error}</p>}
+            {sucess && <p className="sucess">Message Send</p>}
+          </div>
+        </div>
       </form>
     </div>
   );
