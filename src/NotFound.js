@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const NotFound = () => {
   return (
     <div style={{ backgroundColor: "#95c2de" }}>
