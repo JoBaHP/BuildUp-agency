@@ -27,7 +27,6 @@ const ContactForm = () => {
   const [error, setError] = useState(null);
 
   // Check Component Mounted
-
   const [mount, setMount] = useState(true);
 
   // Axios Cancel Token Source
@@ -57,7 +56,7 @@ const ContactForm = () => {
 
     axios
       .post(
-        "http://localhost:3000/messages",
+        "https://enail-server.herokuapp.com/contact",
         {
           name,
           email,
@@ -133,7 +132,9 @@ const ContactForm = () => {
       />
 
       <form onSubmit={handleSubmit} className="contact-form">
-        <label htmlFor="name">Say Hi</label>
+        <label htmlFor="name">
+          <b>We are here for YOU</b>
+        </label>
         <input
           id="name"
           type="text"
