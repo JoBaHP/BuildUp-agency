@@ -56,7 +56,7 @@ const ContactForm = () => {
 
     axios
       .post(
-        "https://enail-server.herokuapp.com/contact",
+        "https://enail-server.herokuapp.com/",
         {
           name,
           email,
