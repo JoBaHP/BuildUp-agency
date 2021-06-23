@@ -28,6 +28,7 @@
 
   // Handle Open Navbar In Responsive Mode
   &.open {
+    background-color: $upperBackgroundColor;
     box-shadow: none;
 
     .navbar-responsive-btn {

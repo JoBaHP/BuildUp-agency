@@ -8,7 +8,7 @@ import FooterFooter from "./Footer/Footer";
 import FooterLinks from "./Links/Links";
 import FooterHeader from "./Header/Header";
 import Loading from "./../Loading/Index";
-import Error from "../Error/Index";
+import Error from "./../Error/Index";
 
 // Main Footer Sass File
 import "./Index.scss";

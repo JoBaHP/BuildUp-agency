@@ -1,4 +1,3 @@
-// Import Custome Hooks
 import useAxios from "./../../CustomeHooks/useAxios/useAxios";
 import { useDarkTheme } from "./../../CustomeHooks/useDarkTheme/useDarkTheme";
 
@@ -13,11 +12,11 @@ import "./Index.scss";
 
 // Services Background
 const servicesBg = {
-  backgroundImage: "url(./../../Images/Services/background.svg)",
+  backgroundImage: "url(./Images/Services/background.svg)",
 };
 
 const servicesBgDark = {
-  backgroundImage: "url(./../../Images/Services/background-dark.svg)",
+  backgroundImage: "url(./Images/Services/background-dark.svg)",
 };
 
 // Main Services Component

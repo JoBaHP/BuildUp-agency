@@ -30,10 +30,7 @@ const ContactForm = () => {
   const [mount, setMount] = useState(true);
 
   // Axios Cancel Token Source
-  // eslint-disable-next-line
-  const [cancelTokenSource, setCancelTokenSource] = useState(
-    axios.CancelToken.source()
-  );
+  const [cancelTokenSource] = useState(axios.CancelToken.source());
 
   /*
    ** Page Refresh When Using json-server Because Api Is Placed In Public Folder
@@ -56,7 +53,7 @@ const ContactForm = () => {
 
     axios
       .post(
-        "https://enail-server.herokuapp.com/",
+        "https://enail-server.herokuapp.com/contact",
         {
           name,
           email,
@@ -132,9 +129,7 @@ const ContactForm = () => {
       />
 
       <form onSubmit={handleSubmit} className="contact-form">
-        <label htmlFor="name">
-          <b>We are here for YOU</b>
-        </label>
+        <label htmlFor="name">Contact Us </label>
         <input
           id="name"
           type="text"

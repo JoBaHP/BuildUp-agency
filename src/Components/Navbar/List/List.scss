@@ -10,9 +10,9 @@
     left: 0;
     right: 0;
     width: 100%;
-    background-color: $backgroundColor;
+    background-color: $upperBackgroundColor;
     border-radius: 0 0 20px 20px;
-    box-shadow: 0 8px 15px rgba(#000, 0.1);
+    box-shadow: 0 2px 15px $boxShadowThirdColor;
     overflow: hidden;
     height: 0;
     padding: 0;
@@ -45,7 +45,6 @@
 
       background-color: $mainColor;
       border-radius: 30px;
-      box-shadow: 0 8px 15px rgba(#000, 0.1);
       padding: 12px 40px;
 
       .navbar-btn-icon {
@@ -71,14 +70,14 @@
 
     .navbar-link {
       @include reset-link;
-      font-size: 1.15rem;
-      font-weight: bold;
-      color: $fourthColor solid;
+      font-size: 1.2rem;
+      color: $fourthColor;
       transition: color 0.3s linear;
 
       &.active,
       &:hover {
-        color: $mainColor;
+        color: $secondColor;
+        font-weight: bold;
       }
     }
   }

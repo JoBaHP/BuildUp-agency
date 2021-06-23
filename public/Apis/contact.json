@@ -7,19 +7,19 @@
   "content": [
     {
       "id": 1,
-      "title": "Address",
+      "title": "US Office",
       "icon": "fas fa-map-marker-alt",
       "text_1": "3501 Jack Northrop Ave Suite #AYU742",
       "text_2": "Hawthorne",
       "text_3": "CA 90250 USA"
     },
     {
-      "id": 2,
-      "title": "Call for queries",
-      "icon": "fas fa-mobile-alt",
-      "text_1": "+1 (312) 967-7450",
-      "text_2": "+1 (312) 967-7451",
-      "text_3": ""
+      "id": 4,
+      "title": "Serbia Office",
+      "icon": "fas fa-map-marker-alt",
+      "text_1": "3501 Jack Northrop Ave Suite #AYU742",
+      "text_2": "Hawthorne",
+      "text_3": "CA 90250 USA"
     },
     {
       "id": 3,
@@ -27,6 +27,14 @@
       "icon": "fas fa-envelope",
       "text_1": "info@buildup.com",
       "text_2": "",
+      "text_3": ""
+    },
+    {
+      "id": 2,
+      "title": "Call for queries",
+      "icon": "fas fa-mobile-alt",
+      "text_1": "(+1) 312/  967-7450",
+      "text_2": "(+381) 065/ 936-899",
       "text_3": ""
     }
   ]
