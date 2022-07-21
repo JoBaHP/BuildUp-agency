@@ -1,4 +1,5 @@
 {
-  "image": "./Images/Main/logo.svg",
-  "text": "BuildUP "
+  "image": "./Images/Main/company-logo.png",
+  "text": "BuildUP",
+  "footer": "./Images/Main/company-logo.png"
 }

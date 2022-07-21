@@ -26,7 +26,6 @@ const NavbarList = ({ setNavbarOpen }) => {
     return (
       <li key={link.id} className="navbar-item">
         <NavLink
-          exact
           to={`${process.env.PUBLIC_URL}${link.link}`}
           className="navbar-link"
           onClick={(e) =>

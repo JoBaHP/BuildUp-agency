@@ -1,5 +1,5 @@
-// import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Import Custome Hooks
 import { DarkThemeProvider } from "./CustomeHooks/useDarkTheme/useDarkTheme";
@@ -9,7 +9,8 @@ import Navbar from "./Components/Navbar/Index";
 import Index from "./Components/Index/Index";
 import Services from "./Components/Services/Index";
 import Portfolio from "./Components/Portfolio/Index";
-//import Team from "./Components/Team/Index";
+/* import Team from "./Components/Team/Index";
+ */
 import About from "./Components/About/Index";
 import Contact from "./Components/Contact/Index";
 import Buttons from "./Components/Buttons/Index";
@@ -21,15 +22,15 @@ function App() {
       <Router>
         <Navbar />
         <Buttons />
-        <Switch>
-          <Route exact path="/" component={Index} />
-          <Route path="/services" component={Services} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/about" component={About} />
+        <Routes>
+          <Route exact path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/about" element={<About />} />
           {/* <Route path="/team" component={Team} /> */}
-          <Route path="/contact" component={Contact} />
-          <Route component={NotFound} />
-        </Switch>
+          <Route path="/contact" element={<Contact />} />
+          <Route element={<NotFound />} />
+        </Routes>
       </Router>
     </DarkThemeProvider>
   );

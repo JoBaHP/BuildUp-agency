@@ -7,25 +7,17 @@
   "content": [
     {
       "id": 1,
-      "title": "US Office",
+      "title": "Office",
       "icon": "fas fa-map-marker-alt",
-      "text_1": "3501 Jack Northrop Ave Suite #AYU742",
-      "text_2": "Hawthorne",
-      "text_3": "CA 90250 USA"
-    },
-    {
-      "id": 4,
-      "title": "Serbia Office",
-      "icon": "fas fa-map-marker-alt",
-      "text_1": "3501 Jack Northrop Ave Suite #AYU742",
-      "text_2": "Hawthorne",
-      "text_3": "CA 90250 USA"
+      "text_1": "Bul. Jovana Dučića, 1",
+      "text_2": "21000 Novi Sad",
+      "text_3": "Serbia"
     },
     {
       "id": 3,
       "title": "Email Us",
       "icon": "fas fa-envelope",
-      "text_1": "info@buildup.com",
+      "text_1": "info@build-up.us",
       "text_2": "",
       "text_3": ""
     },

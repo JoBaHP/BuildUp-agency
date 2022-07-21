@@ -16,21 +16,11 @@
         {
           "id": 2,
           "name": "Testimonials",
-          "link": "/"
+          "link": "/testimonials"
         },
         {
           "id": 3,
           "name": "Careers",
-          "link": "/"
-        },
-        {
-          "id": 4,
-          "name": "Investors",
-          "link": "/"
-        },
-        {
-          "id": 5,
-          "name": "Terms of Service",
           "link": "/"
         }
       ]
@@ -42,7 +32,7 @@
         {
           "id": 1,
           "name": "Contact",
-          "link": "/"
+          "link": "/contact"
         },
         {
           "id": 2,
@@ -52,11 +42,6 @@
         {
           "id": 3,
           "name": "Destinations",
-          "link": "/"
-        },
-        {
-          "id": 4,
-          "name": "Sponsorships",
           "link": "/"
         }
       ]
@@ -79,15 +64,10 @@
           "id": 3,
           "name": "Agency",
           "link": "/"
-        },
-        {
-          "id": 4,
-          "name": "Influencer",
-          "link": "/"
         }
       ]
     }
   ],
 
-  "copy_right": "© 2021 | designed by buildUp.com"
+  "copy_right": "© 2021 | designed by BuildUp.digital"
 }

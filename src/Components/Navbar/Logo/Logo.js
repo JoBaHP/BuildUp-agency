@@ -16,7 +16,7 @@ const NavbarLogo = () => {
 
   // Fetch data
   const {
-    data: { image = "", text = "" },
+    data: { text = "" },
   } = useAxios("./Apis/logo.json", []);
 
   return (
@@ -25,9 +25,9 @@ const NavbarLogo = () => {
       onClick={preventRouterLinks}
       className="logo"
     >
-      {image && (
+      {/* {image && (
         <img src={image} alt="Logo" draggable="false" className="logo-image" />
-      )}
+      )} */}
 
       {text && <span className="logo-text">{text}</span>}
     </Link>

@@ -20,7 +20,7 @@ const PortfolioBg = {
 };
 
 const PortfolioBgDark = {
-  backgroundImage: "url('./Images/Portfolio/background-dark.svg')",
+  backgroundImage: "url('./Images/Portfolio/background.svg')",
 };
 
 // Main Portfolio Component
